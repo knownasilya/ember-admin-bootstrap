@@ -9,9 +9,9 @@
         <div class="col-md-6">
           {{#unless hideCreate}}
             {{#if relationshipGiven}}
-              {{link-to 'Create' 'model-records.new' recordType (query-params relationship-name=relationshipName relationship-id=relationshipId) class='pull-right btn btn-link'}}
+              {{link-to 'Create' (concat adminConfig.adminRoute '.model-records.new') recordType (query-params relationship-name=relationshipName relationship-id=relationshipId) class='pull-right btn btn-link'}}
             {{else}}
-              {{link-to 'Create' 'model-records.new' recordType class='pull-right btn btn-link'}}
+              {{link-to 'Create' (concat adminConfig.adminRoute '.model-records.new') recordType class='pull-right btn btn-link'}}
             {{/if}}
           {{/unless}}
         </div>

@@ -31,7 +31,7 @@
             <tr>
               {{#each filteredColumns as |column|}}
                 <td>
-                  {{#link-to (concat adminConfig.adminRoute 'model-records.edit') recordType record}}
+                  {{#link-to (concat adminConfig.adminRoute '.model-records.edit') recordType record}}
                     {{baseComponents.propertyPrint record=record column=column}}
                   {{/link-to}}
                 </td>

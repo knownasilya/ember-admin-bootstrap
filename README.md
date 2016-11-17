@@ -1,27 +1,24 @@
-# Ember-admin-bootstrap
+# Ember Admin Bootstrap
 
-This README outlines the details of collaborating on this Ember addon.
+Bootstrap theme for Ember Admin.
 
-## Installation
+## Usage
 
-* `git clone <repository-url>` this repository
-* `cd ember-admin-bootstrap`
-* `npm install`
-* `bower install`
+Setup this and the theme manager addon:
 
-## Running
+```sh
+ember install ember-admin-bootstrap
+ember install ember-admin-theme-manager
+```
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Then add the following to your app's `application` template:
 
-## Running Tests
+```hbs
+{{#admin-theme-manager theme='bootstrap' adminConfig=adminConfig as |theme|}}
+  {{#if (eq theme 'bootstrap')}}
+    {{mount 'ember-admin-bootstrap'}}
+  {{/if}}
+{{/admin-theme-manager}}
+```
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+Note: we use `ember-truth-helpers` addon for the `(eq ` part.

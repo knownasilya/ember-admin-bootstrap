@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="{{if relationshipTypes.length 'col-sm-6' 'col-sm-12'}}">
   <div class="edit panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
@@ -26,8 +26,10 @@
         {{baseComponents.asyncDeleteButton default="Delete" pending="Deleting..." fulfilled="Deleted" class="delete btn btn-danger pull-right"}}
     </div>
   </div>
+</div>
 
-  {{#if relationshipTypes.length}}
+{{#if relationshipTypes.length}}
+  <div class="col-sm-6">
     <div class="relationships panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
@@ -44,5 +46,5 @@
         {{/each}}
       </div>
     </div>
-  {{/if}}
-</div>
+  </div>
+{{/if}}

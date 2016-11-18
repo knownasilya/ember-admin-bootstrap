@@ -12,7 +12,7 @@
           <div {{bind-attr class=":model-column column :form-group"}}>
             <label>
               {{column}}
-              {{admin-input record=this columnValue=column class="form-control"}}
+              {{baseComponents.adminInput record=this columnValue=column class="form-control"}}
             </label>
           </div>
         {{/each}}
@@ -20,10 +20,10 @@
     </div>
 
     <div class="panel-footer">
-        {{async-button action="save" default="Save" pending="Saving..." fulfilled="Saved" rejected="Error" class="save btn btn-primary"}}
-        <button {{action "cancel"}} class="cancel btn btn-default">Cancel</button>
+        {{baseComponents.asyncSaveButton default="Save" pending="Saving..." fulfilled="Saved" rejected="Error" class="save btn btn-primary"}}
+        <button {{action actions.cancel}} class="cancel btn btn-default">Cancel</button>
 
-        {{async-button action="destroyRecord" default="Delete" pending="Deleting..." fulfilled="Deleted" class="delete btn btn-danger pull-right"}}
+        {{baseComponents.asyncDeleteButton default="Delete" pending="Deleting..." fulfilled="Deleted" class="delete btn btn-danger pull-right"}}
     </div>
   </div>
 
@@ -38,7 +38,7 @@
       {{#each relationshipTypes as |relationshipType|}}
         {{#each relationshipType as |relationship|}}
           <h4>{{relationship.name}}</h4>
-          {{model-records-table recordType=relationship.type records=relationship.records relationshipName=relationship.inverse relationshipId=id}}
+          {{baseComponents.modelRecordsTable recordType=relationship.type records=relationship.records relationshipName=relationship.inverse relationshipId=id}}
         {{/each}}
       {{/each}}
     </div>

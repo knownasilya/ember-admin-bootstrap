@@ -27,20 +27,22 @@
     </div>
   </div>
 
-  <div class="relationships panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        Relationships ({{recordType}} {{id}})
-      </h3>
-    </div>
+  {{#if relationshipTypes.length}}
+    <div class="relationships panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          Relationships ({{recordType}} {{id}})
+        </h3>
+      </div>
 
-    <div class="panel-body">
-      {{#each relationshipTypes as |relationshipType|}}
-        {{#each relationshipType as |relationship|}}
-          <h4>{{relationship.name}}</h4>
-          {{baseComponents.modelRecordsTable recordType=relationship.type records=relationship.records relationshipName=relationship.inverse relationshipId=id}}
+      <div class="panel-body">
+        {{#each relationshipTypes as |relationshipType|}}
+          {{#each relationshipType as |relationship|}}
+            <h4>{{relationship.name}}</h4>
+            {{baseComponents.modelRecordsTable recordType=relationship.type records=relationship.records relationshipName=relationship.inverse relationshipId=id}}
+          {{/each}}
         {{/each}}
-      {{/each}}
+      </div>
     </div>
-  </div>
+  {{/if}}
 </div>

@@ -1,0 +1,25 @@
+<div class="ember-admin container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            {{link-to adminConfig.adminRoute  class='navbar-brand'}}
+          </div>
+
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              {{#each filteredModels as |name|}}
+                <li>{{link-to name (concat adminConfig.adminRoute '.model-records') name}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    {{yield}}
+  </div>
+</div>

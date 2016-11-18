@@ -1,0 +1,1 @@
+export { default } from 'ember-admin-bootstrap/components/application-layout/component';

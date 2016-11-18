@@ -21,7 +21,7 @@
 
     <div class="panel-footer">
         {{baseComponents.asyncSaveButton default="Save" pending="Saving..." fulfilled="Saved" rejected="Error" class="save btn btn-primary"}}
-        <button {{action (action actions.cancel)}} class="cancel btn btn-default">Cancel</button>
+        <button {{action baseActions.cancel}} class="cancel btn btn-default">Cancel</button>
 
         {{baseComponents.asyncDeleteButton default="Delete" pending="Deleting..." fulfilled="Deleted" class="delete btn btn-danger pull-right"}}
     </div>

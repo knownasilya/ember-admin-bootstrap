@@ -1,5 +1,7 @@
 {{#init-admin-theme 'bootstrap' as |api|}}
   {{api.overrideArea 'modelList' send=(component 'model-list')}}
+  {{api.overrideArea 'modelEdit' send=(component 'model-edit')}}
+  {{api.overrideArea 'modelNew' send=(component 'model-new')}}
   {{api.overrideArea 'application' send=(component 'application-layout')}}
 {{/init-admin-theme}}
 
